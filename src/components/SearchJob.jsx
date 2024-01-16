@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchData } from "../redux/actions";
 import { Container, Row, Col, Form } from "react-bootstrap";
+import Job from "./Job";
 
 const SearchJob = () => {
   //1. Associamo dispatch

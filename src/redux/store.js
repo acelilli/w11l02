@@ -1,9 +1,14 @@
-import { createStore, applyMiddleWare } from "redux";
-import { thunk } from "redux-thunk";
-import rootReducer from "./reducers";
+import { configureStore, combineReducers } from '@reduxjs/toolkit'
+import favouriteReducer from '../reducers/favourite'
+import jobReducer from '../reducers/job'
 
-const store = createStore(rootReducer, applyMiddleWare(thunk));
+const allReducer = combineReducers({
+  favourite: favouriteReducer,
+  job: jobReducer,
+})
 
-export default store;
+const store = configureStore({
+  reducer: allReducer,
+})
 
-// ROOTREDUCER combina i reducers -> hook che ce mette tutti assieme
+export default store
